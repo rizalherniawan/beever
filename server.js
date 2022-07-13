@@ -6,9 +6,10 @@ const errorHandler = require('./handler/errorHandler')
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
-app.use(errorHandler)
+
 
 app.use('/api/v1', api)
+app.use(errorHandler)
 
 app.listen(PORT, () => {
     console.log(`Server is connected to PORT: ${PORT}`)
